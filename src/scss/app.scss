@@ -1,0 +1,32 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+// Variables personalizadas
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+// Estilos personalizados del sistema
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 57px - 61px);
+}
+
+// Personalización de DataTables
+.dataTables_wrapper {
+    .dataTables_filter {
+        float: right;
+    }
+    
+    .dataTables_length {
+        float: left;
+    }
+}
+
+// Personalización de SweetAlert2
+.swal2-popup {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+

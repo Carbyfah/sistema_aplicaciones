@@ -1,0 +1,43 @@
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "description": "Aplicacion MVC demo",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "watch": "webpack --watch --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "css-loader": "^6.11.0",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss-loader": "^8.2.0",
+    "sass": "^1.93.0",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "admin-lte": "^3.2.0",
+    "bootstrap": "^4.6.2",
+    "bootstrap-icons": "^1.13.1",
+    "chart.js": "^4.4.0",
+    "datatables.net": "^1.13.6",
+    "datatables.net-bs4": "^1.13.6",
+    "datatables.net-responsive": "^2.5.0",
+    "datatables.net-responsive-bs4": "^2.5.0",
+    "intro.js": "^7.2.0",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
+    "select2": "^4.1.0-rc.0",
+    "sweetalert2": "^11.26.3",
+    "xlsx": "^0.18.5"
+  }
+}
