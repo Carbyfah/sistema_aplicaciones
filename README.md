@@ -68,10 +68,7 @@ INSTALACIÓN Y CONFIGURACIÓN
 
 git clone https://github.com/Carbyfah/sistema_aplicaciones.git
 
-# Entrar al directorio
-
-cd sistema_aplicaciones 3. Archivos de Configuración
-.env (crear en raíz)
+# crear .env
 
 DEBUG_MODE = 0
 DB_HOST=localhost
@@ -81,37 +78,40 @@ DB_NAME=apps
 DB_USER=developer
 DB_PASS=rootpassword
 
-APP\*NAME = "sistema_aplicaciones"
-.gitignore
+# crear .gitignore en raiz
 
-node_modules/
-vendor/
+node_modules
+vendor
 composer.lock
-package-lock.json
-public/build/
+packagelock.json
+public/
+build
 .gitignore
 .htaccess
 public/.htaccess
-temp/
-storage/
+temp
+storage
 includes/.env
-uploads/
-.htaccess (raíz)
+
+# crear .htaccess (raíz)
 
 RewriteEngine on
 RewriteRule ^$ public/ [L]
 RewriteRule (.\*) public/$1 [L]
-public/.htaccess
+
+# cerar .htaccess en public
 
 RewriteEngine On
-RewriteCond %{REQUEST\*FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [QSA,L] 4. Base de Datos
+RewriteRule ^ index.php [QSA,L]
+
+# comandos para crear la base de datos
 
 CREATE DATABASE apps CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER 'developer'@'%' IDENTIFIED BY 'rootpassword';
 GRANT ALL PRIVILEGES ON apps.\* TO 'developer'@'%';
-FLUSH PRIVILEGES; 5. Instalación de Dependencias
+FLUSH PRIVILEGES;
 
 # Dependencias PHP
 
