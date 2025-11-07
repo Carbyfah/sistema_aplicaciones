@@ -96,18 +96,19 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 ```
 
-### 5. Crear archivo .env
+### 5. Crear archivo .env en includes
 
 Este archivo deberá contener la información según el entorno en que se ejecute el proyecto y deberá contener esta información
 
 ```
 DEBUG_MODE = 0
-DB_HOST=host
-DB_SERVICE=port
-DB_SERVER=server_name
-DB_NAME=db_name
+DB_HOST=host.docker.internal
+DB_PORT=3306
+DB_USER=developer
+DB_PASS=rootpassword
+DB_NAME=apps
 
-APP_NAME = "app_name"
+APP_NAME = "sistema_aplicaciones"
 ```
 
 ### 6. Instalar paquetes de node
