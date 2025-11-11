@@ -1,4 +1,4 @@
-# entrar a contenedor
+# entrar a contenedor de mariaDB
 
 docker exec -it mariadb mariadb -uroot -prootpassword
 
@@ -13,6 +13,40 @@ FLUSH PRIVILEGES;
 SHOW DATABASES;
 USE apps;
 SHOW TABLES;
+EXIT;
+
+# ORACLE
+
+docker exec -it oracle-db sqlplus system/oracle123@XEPDB1
+
+-- 1. Eliminar apps si existe
+DROP USER apps CASCADE;
+
+-- 2. Eliminar developer si existe (ignorar error si no existe)
+DROP USER developer CASCADE;
+
+-- 3. Crear usuario apps limpio
+CREATE USER apps IDENTIFIED BY rootpassword DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp QUOTA UNLIMITED ON users;
+
+-- 4. Crear usuario developer limpio
+CREATE USER developer IDENTIFIED BY rootpassword DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
+
+-- 5. Dar privilegios a apps
+GRANT CONNECT, RESOURCE, DBA TO apps;
+
+-- 6. Dar privilegios a developer
+GRANT CONNECT, RESOURCE, DBA TO developer;
+
+-- 7. Verificar que existen
+SELECT username FROM dba_users WHERE username IN ('APPS', 'DEVELOPER') ORDER BY username;
+
+-- 8. Conectarse como apps
+CONNECT apps/rootpassword@XEPDB1
+
+-- 9. Verificar que está vacío
+SELECT table_name FROM user_tables;
+
+-- 10. Salir
 EXIT;
 
 # INSTALACIÓN DE TODAS LAS DEPENDENCIAS FALTANTES
